@@ -13,8 +13,13 @@ import java.util.List;
 @Controller
 public class CarController {
 
+
+    private final CarService carService;
+
     @Autowired
-    CarService carService;
+    public CarController (CarService carService){
+        this.carService= carService;
+    }
 
     @GetMapping("/cars")
     public String allCars(Model model, @RequestParam (value = "count", defaultValue = "5") int number) {
