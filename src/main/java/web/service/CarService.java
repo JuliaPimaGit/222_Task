@@ -1,9 +1,16 @@
 package web.service;
 
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
 import java.util.List;
 
-public interface CarService {
-    List<Car> countCar(List<Car> cars, int index);
+@Service
+public class CarService {
+
+    public static List<Car> countCar(List<Car> cars, int index) {
+        if (index>5){index=5;}
+        return cars.subList(0,index);
+
+    }
 }

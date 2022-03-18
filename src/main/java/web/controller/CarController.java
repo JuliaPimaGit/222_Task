@@ -15,9 +15,6 @@ import java.util.List;
 @Controller
 public class CarController {
 
-    @Autowired
-    CarService carService;
-
     @GetMapping("/cars")
     public String allCars(Model model, @RequestParam (value = "count", defaultValue = "5") int number) {
         List<Car> carList = new ArrayList<>();
@@ -26,7 +23,7 @@ public class CarController {
         carList.add(new Car("Audi", 2020,"Jane B"));
         carList.add(new Car("BMW", 2001,"Bob S"));
         carList.add(new Car("Acura", 2019,"Kate A"));
-        List <Car> list = carService.countCar(carList,number);
+        List <Car> list = CarService.countCar(carList,number);
         model.addAttribute("list",list);
         return "cars";
     }
