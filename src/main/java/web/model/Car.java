@@ -10,7 +10,6 @@ public class Car {
         this.year = year;
         this.owner = owner;
     }
-
     public Car() {
     }
 
